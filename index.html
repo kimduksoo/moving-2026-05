@@ -90,6 +90,12 @@
   .checklist-text strong { display: block; font-weight: 600; margin-bottom: 2px; }
   .checklist-text small { color: var(--ink-3); font-size: 13px; }
 
+  /* Done state */
+  .day.done { opacity: 0.5; }
+  .task-tag.done { background: var(--accent); color: #fff; }
+  .checklist-icon.done { background: var(--accent); border-color: var(--accent); position: relative; }
+  .checklist-icon.done::after { content: ""; position: absolute; left: 5px; top: 1.5px; width: 4px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
   /* Memo (real estate) */
   .memo { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
   .memo h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
@@ -133,11 +139,11 @@
   <section class="section">
     <div class="section-title">Timeline</div>
 
-    <!-- 5/26 -->
-    <div class="day">
+    <!-- 5/26 (완료) -->
+    <div class="day done">
       <div class="day-num">26<small>화요일</small></div>
       <div class="day-content">
-        <div class="day-label">Day 0 · 입주 전</div>
+        <div class="day-label">Day 0 · 완료 ✓</div>
         <div class="day-title">계약서 변경 + 잔금</div>
         <div class="task">
           <div class="task-time">16:00</div>
@@ -162,14 +168,6 @@
             <div class="task-desc">작은방 에어컨 구멍 1개 타공 가능하다는 내용을 계약서 특약에 반드시 기재</div>
           </div>
           <div class="task-tag rec">필수 기재</div>
-        </div>
-        <div class="task">
-          <div class="task-time">방문 시 확인</div>
-          <div>
-            <div class="task-name">실외기 외부 설치 가능 여부</div>
-            <div class="task-desc">베란다 내부 말고 외벽 앵글 거치 가능한지 집주인·관리실 확인. 외부 설치 시 소음·열 외부 배출로 더 쾌적</div>
-          </div>
-          <div class="task-tag acc">확인</div>
         </div>
         <div class="task">
           <div class="task-time">5/26 확인</div>
@@ -197,12 +195,12 @@
           <div class="task-tag rec">무료</div>
         </div>
         <div class="task">
-          <div class="task-time">입주 1~2일 전</div>
+          <div class="task-time">방문 시</div>
           <div>
-            <div class="task-name">도시가스 개통 신청 (필수)</div>
-            <div class="task-desc">1800-4592 전화 (집주인 안내 번호). 안 하면 가스 안 나옴. 전입신고로 자동 X. 임대인이 신청자가 아니라 본인이 직접</div>
+            <div class="task-name">안방 정확한 실측 + 식기세척기 자리 확인</div>
+            <div class="task-desc">여친 요청. 안방쪽 정확한 치수 측정(옷장 들어갈 벽면 등). 식기세척기 들어갈 하부장 칸 자리·치수 확인</div>
           </div>
-          <div class="task-tag warn">필수</div>
+          <div class="task-tag rec">실측</div>
         </div>
         <div class="task">
           <div class="task-time">입주 후</div>
@@ -276,7 +274,7 @@
       <div class="day-num">29<small>금요일</small></div>
       <div class="day-content">
         <div class="day-label">Day 3</div>
-        <div class="day-title">침대 + 세탁기</div>
+        <div class="day-title">침대 · 세탁기 · 도시가스 개통</div>
         <div class="task">
           <div class="task-time">15:00~16:00</div>
           <div>
@@ -292,6 +290,14 @@
             <div class="task-desc">침대와 같은 날로 몰기로 결정</div>
           </div>
           <div class="task-tag rec">확정</div>
+        </div>
+        <div class="task">
+          <div class="task-time">16:00~16:30</div>
+          <div>
+            <div class="task-name">도시가스 개통 (전입) · 기사 방문</div>
+            <div class="task-desc">코원에너지서비스(SK) 예약 완료. 예약번호 A00010561729. 운중동 971-5 202호. 안전점검 후 개통, 본인 입회 필요</div>
+          </div>
+          <div class="task-tag acc">예약 완료</div>
         </div>
       </div>
     </div>
@@ -400,16 +406,16 @@
     <div class="section-title">Action Items · 본인</div>
     <ul class="checklist">
       <li>
-        <div class="checklist-icon"></div>
+        <div class="checklist-icon done"></div>
         <div class="checklist-text">
-          <strong>5/26 잔금 1,800만원 준비</strong>
+          <strong>5/26 잔금 1,800만원 준비 ✓</strong>
           <small>계약서 변경하러 가는 날. 부동산 16:00 방문 전까지 송금 가능 상태 확보</small>
         </div>
       </li>
       <li>
-        <div class="checklist-icon"></div>
+        <div class="checklist-icon done"></div>
         <div class="checklist-text">
-          <strong>5/26 계약서 특약: 작은방 에어컨 타공</strong>
+          <strong>5/26 계약서 특약: 작은방 에어컨 타공 ✓</strong>
           <small>작은방 에어컨 구멍 1개 타공 OK라는 내용 반드시 계약서에 기재 후 서명</small>
         </div>
       </li>
@@ -435,10 +441,10 @@
         </div>
       </li>
       <li>
-        <div class="checklist-icon"></div>
+        <div class="checklist-icon done"></div>
         <div class="checklist-text">
-          <strong>도시가스 개통 신청 (입주 1~2일 전, 필수)</strong>
-          <small>1800-4592 전화 (집주인 안내 번호). 안 하면 가스 안 나옴. 전입신고로 자동 처리 X. 안전점검 후 개통</small>
+          <strong>도시가스 개통 예약 완료 ✓</strong>
+          <small>코원에너지서비스(SK) 예약번호 A00010561729. 5/29 16:00~16:30 기사 방문, 안전점검 후 개통. 본인 입회</small>
         </div>
       </li>
       <li>
